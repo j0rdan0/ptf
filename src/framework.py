@@ -511,9 +511,9 @@ def use_module(module, all_trigger):
                             # check launcher
                             launcher(filename, install_location)
                             # run after commands
-                            if prompt != "update": after_commands(filename, install_location)
-                        print_status("Running updatedb to tidy everything up.")
-                        subprocess.Popen("updatedb", shell=True).wait()
+                       #    if prompt != "update": after_commands(filename, install_location)
+                       # print_status("Running updatedb to tidy everything up.")
+                       # subprocess.Popen("updatedb", shell=True).wait()
                     if not os.path.isdir(install_location):
                         print_error("The tool was not found in the install location. Try running install first!")
             # if we want to install it
@@ -636,8 +636,8 @@ def use_module(module, all_trigger):
                         print_status("Finished Installing! Enjoy the tool located under: " + install_location)
                         launcher(filename, install_location)
                         after_commands(filename, install_location)
-                    print_status("Running updatedb to tidy everything up.")
-                    subprocess.Popen("updatedb", shell=True).wait()
+                #    print_status("Running updatedb to tidy everything up.")
+                 #   subprocess.Popen("updatedb", shell=True).wait()
             # if we update all we need to break out until finished
             if int(all_trigger) == 1 or int(all_trigger) == 2:
                 break

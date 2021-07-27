@@ -313,10 +313,10 @@ def after_commands(filename, install_location):
         # ptf location
         if "{PTF_LOCATION}" in commands:
             commands = commands.replace("{PTF_LOCATION}", os.getcwd())
-        print_status(
-            "Running after commands for post installation requirements.")
-        after_commands(commands, install_location)
-        print_status("Completed running after commands routine..")
+      #  print_status(
+       #     "Running after commands for post installation requirements.")
+      #  after_commands(commands, install_location)
+      #  print_status("Completed running after commands routine..")
 
 # launcher - create launcher under /usr/local/bin
 def launcher(filename, install_location):
@@ -447,7 +447,7 @@ def auto_update():
             "If you want to turn this off, go to the PTF directory and go to config and change AUTO_UPDATE")
         if profile_os() == "DEBIAN":
             subprocess.Popen(
-                "sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get dist-upgrade -y && apt-get -q --allow-downgrades --allow-remove-essential --allow-change-held-packages -y install build-essential && sudo apt-get autoremove -y && apt-get autoclean -y && updatedb", shell=True).wait()
+                "sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get dist-upgrade -y && apt-get -q --allow-downgrades --allow-remove-essential --allow-change-held-packages -y install build-essential && sudo apt-get autoremove -y && apt-get autoclean -y", shell=True).wait()
         print_status(
             "Finished with normal package updates, moving on to the tools section..")
     else:
